@@ -1,4 +1,4 @@
-package baitap1;
+package app;
 
 import controller.IOFile;
 import java.util.ArrayList;
@@ -9,13 +9,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Administrator
  */
-public class GiaoDien extends javax.swing.JFrame {
+public class Home extends javax.swing.JFrame {
 
-    private ArrayList<sinhvien> list ;
+    private ArrayList<Students> list ;
     private IOFile file;
     DefaultTableModel model;
    
-    public GiaoDien() {
+    public Home() {
         file = new IOFile();
         list = file.docSV();
         
@@ -32,7 +32,7 @@ public class GiaoDien extends javax.swing.JFrame {
 
     public void H1() {
         model.setRowCount(0);
-        for (sinhvien sv: list) {
+        for (Students sv: list) {
             model.addRow(sv.toObject());
         }
     }
@@ -199,7 +199,7 @@ public class GiaoDien extends javax.swing.JFrame {
 
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
         
-        sinhvien sv = new sinhvien() ;
+        Students sv = new Students();
         sv.setName(txtName.getText());
         sv.setDate(txtDate.getText());
         sv.setLop(txtLop.getText());
@@ -245,20 +245,20 @@ public class GiaoDien extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GiaoDien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GiaoDien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GiaoDien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GiaoDien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GiaoDien().setVisible(true);
+                new Home().setVisible(true);
             }
         });
     }

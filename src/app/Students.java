@@ -1,9 +1,9 @@
-package baitap1;
+package app;
 /**
  *
  * @author Administrator
  */
-public class sinhvien {
+public class Students {
     private String name , date , lop , nganh , phone ;
     
     public String getName() {

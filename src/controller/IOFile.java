@@ -1,6 +1,6 @@
 package controller;
 
-import baitap1.sinhvien;
+import app.Students;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,14 +21,14 @@ public class IOFile {
             ObjectOutputStream oos = new ObjectOutputStream(out);
             oos.writeObject(list);
         } catch (Exception e) {
-            System.out.println("Got an Exception!");
+            System.out.println("Done !");
         } 
     }
     
     File file = new File("SV.txt");
-    public void ghiSV(ArrayList <sinhvien> list) {
+    public void ghiSV(ArrayList<Students> list) {
         try (PrintWriter pw = new PrintWriter(file)) {
-            for (sinhvien sv: list) {
+            for (Students sv: list) {
                pw.println(sv.getName());
                pw.println(sv.getDate());
                pw.println(sv.getLop());
@@ -52,10 +52,10 @@ public class IOFile {
     }
     
     public ArrayList docSV () {
-        ArrayList <sinhvien> list = new ArrayList<>();
+        ArrayList <Students> list = new ArrayList<>();
         try (Scanner sc = new Scanner(file)) {
             while (sc.hasNext()) {
-              sinhvien sv = new sinhvien();
+              Students sv = new Students();
               sv.setName(sc.nextLine());
               sv.setDate(sc.nextLine());
               sv.setLop(sc.nextLine());
